@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ikid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Neu-Ri-mD9">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem tag="1" title="Good" image="Good" id="x9Q-ee-c9V"/>
+                                    <tabBarItem tag="2" title="Punny" image="Punny" id="BEb-sl-itw"/>
+                                    <tabBarItem tag="3" title="Long Form" image="Long Form" id="1HG-gk-dde"/>
+                                </items>
+                            </tabBar>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fX-pC-k6i">
+                                <rect key="frame" x="315" y="561" width="45" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MrT-g0-7nc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jokes courtesy of Reader's Digest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aP7-MX-aBs">
+                                <rect key="frame" x="15" y="580" width="234" height="18"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Select a category:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpK-Rk-yxs">
+                                <rect key="frame" x="15" y="323.5" width="345" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1fX-pC-k6i" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aP7-MX-aBs" secondAttribute="trailing" constant="8" symbolic="YES" id="1hE-72-JqP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dpK-Rk-yxs" secondAttribute="trailing" constant="15" id="EHr-dn-Dc9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1fX-pC-k6i" secondAttribute="trailing" constant="15" id="IMu-rW-Zek"/>
+                            <constraint firstItem="aP7-MX-aBs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="IS0-sH-6fv"/>
+                            <constraint firstItem="Neu-Ri-mD9" firstAttribute="top" secondItem="1fX-pC-k6i" secondAttribute="bottom" constant="18" id="JsY-iz-xLC"/>
+                            <constraint firstItem="Neu-Ri-mD9" firstAttribute="top" secondItem="aP7-MX-aBs" secondAttribute="bottom" constant="20" id="Men-Io-fig"/>
+                            <constraint firstItem="Neu-Ri-mD9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NC9-Db-mJ8"/>
+                            <constraint firstItem="Neu-Ri-mD9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Uox-fw-wWD"/>
+                            <constraint firstItem="Neu-Ri-mD9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="V3b-cd-7FY"/>
+                            <constraint firstItem="dpK-Rk-yxs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qaj-VA-O4l"/>
+                            <constraint firstItem="dpK-Rk-yxs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="rmn-e2-pwB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="JokeLabel" destination="dpK-Rk-yxs" id="szW-V0-DMg"/>
+                        <outlet property="jokeKindSelector" destination="Neu-Ri-mD9" id="pcO-Zp-fN4"/>
+                        <outlet property="nextButtonOutlet" destination="1fX-pC-k6i" id="Rq9-fh-cwh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="26.53673163418291"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Good" width="30" height="30"/>
+        <image name="Long Form" width="30" height="30"/>
+        <image name="Punny" width="30" height="30"/>
+    </resources>
 </document>
